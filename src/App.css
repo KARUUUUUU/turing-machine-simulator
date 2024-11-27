@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* App Container */
+.app-container {
   min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.content-wrapper {
+  width: 90%;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  margin: auto;
+}
+
+.machine-box {
+  width: 100%;
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 24px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Title */
+.title {
+  margin-bottom: 32px;
+  font-size: 2rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Button Styling */
+.button {
+  padding: 14px 28px;
+  background-color: #2563eb;
   color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    width: 95%;
+    padding: 24px;
+    margin: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .machine-box {
+    padding: 20px;
   }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.content-wrapper {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Control Buttons Container */
+.control-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Control Button Styling */
+.control-button {
+    padding: 14px 28px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+/* Specific button colors */
+.play-button {
+    background-color: #2563eb;  /* Blue - Primary action */
+}
+
+.step-button {
+    background-color: #2563eb;  /* Blue - Same as play */
+}
+
+.reset-button {
+    background-color: #dc2626;  /* Red - Destructive action */
+}
+
+/* Hover effects */
+.control-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.play-button:hover {
+    background-color: #1d4ed8;
+}
+
+.step-button:hover {
+    background-color: #1d4ed8;
+}
+
+.reset-button:hover {
+    background-color: #b91c1c;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+/* Active state */
+.control-button:active {
+    transform: translateY(0);
 }
